@@ -1,0 +1,437 @@
+# ============================================
+# MaxiUpgrade - Messages Configuration
+# ============================================
+# Color Codes: &0-9, &a-f for legacy, or use MiniMessage format
+# Placeholders: {level}, {target_level}, {chance}, {player}, etc.
+
+# Prefix for most messages
+prefix: "&6CraftPixel "
+
+# ============================================
+# GUI MESSAGES
+# ============================================
+
+gui:
+  title: ":offset_-36::ekipman-yukselt:"
+  vanilla-title: "&8Vanilla Ekipman Yükseltme"
+  inventory-full: "&cEnvanterin dolu!"
+
+  # Vanilla Info Panel
+  vanilla-info:
+    title: "&6Vanilla Ekipman Yükseltme"
+    lore:
+      - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      - "&fVanilla ekipmanlarınızı yükseltebilirsiniz!"
+      - "&7"
+      - "&eDesteklenen Ekipmanlar:"
+      - "&7• Kılıçlar, Baltalar, Mızrak"
+      - "&7• Zırhlar (Deri, Demir, Elmas...)"
+      - "&7• Aletler (Kazma, Kürek, Çapa...)"
+      - "&7• Yay, Arbalet, Makas"
+      - "&7"
+      - "&cDikkat: &f+6'dan sonra item yanabilir!"
+      - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+  # Info Panel (Nether Star)
+  info:
+    title: "&6Ekipman Yükseltme Menüsü"
+    lore:
+      - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+      - "&fEkipmanlarınızı yükseltme taşları yükseltebilirsiniz!"
+      - "&7"
+      - "&eBaşarı Oranları:"
+      - "&7• +0 → +5: &a%100"
+      - "&7• +6 → +10: &e%80"
+      - "&7• +11 → +15: &6%60"
+      - "&7• +16 → +20: &c%40"
+      - "&7• +21 → +25: &4%20"
+      - "&7"
+      - "&cDikkat: &f+6'dan sonra item yanabilir!"
+      - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+  # Slot Placeholders
+  slots:
+    item:
+      name: "&cBoş Ekipman Bölmesi"
+      lore:
+        - "&7Güçlendirilecek ekipmanı buraya koyun."
+
+    stone:
+      name: "&aBoş Yükseltme Taşı Bölmesi"
+      lore:
+        - "&7Seviyeye uygun yükseltme taşı koyun."
+        - "&7"
+        - "&e+0-5: &aDüşük Seviye Taş"
+        - "&e+6-10: &eOrta Seviye Taş"
+        - "&e+11-15: &6Yüksek Seviye Taş"
+        - "&e+16-20: &5Efsanevi Taş"
+        - "&e+21-25: &dMistik Taş"
+
+    orb:
+      name: "&aBoş Koruma Küresi Bölmesi"
+      lore:
+        - "&7Koruma Küresi yükseltme Başarısız"
+        - "&7olunca ekipmanın yanmasını engeller."
+        - "&7"
+        - "&cOpsiyonel"
+        - "&e+6 ve üzeri için önerilir!"
+
+    dust:
+      name: "&eBoş Şans Tozu Bölmesi"
+      lore:
+        - "&7Şans tozları Başarı şansını artırır."
+        - "&7"
+        - "&cOpsiyonel"
+        - "&eHer toz: &a+%2 başarı şansı"
+
+  # Upgrade Button
+  button:
+    # Close button
+    close:
+      name: "&c✖ Kapat"
+      lore:
+        - "&7Menüyü kapatmak için tıklayın."
+
+    no-item:
+      name: "&cEkipman Yok"
+      lore:
+        - "&7Güçlendirilecek ekipmanı yukarı koyun!"
+
+    max-level:
+      name: "&cMaksimum Seviye"
+      lore:
+        - "&7Bu ekipman zaten +{max_level} seviyesinde!"
+
+    no-stone:
+      name: "&cYükseltme Taşı Gerekli"
+      lore-footer: "&cYükseltme taşı bölmesine taş koyun!"
+
+    # Parchment system: no stone message
+    no-parchment:
+      name: "&cParşömen Gerekli"
+      lore-footer: "&cYükseltme parşömeni yerleştirin!"
+
+    ready:
+      name: "&6Yükseltmeyi Başlat"
+      lore:
+        - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        - "&fMevcut Seviye: &e+{level}"
+        - "&fHedef Seviye: &a+{target_level}"
+        - "&7"
+        - "&fBaşarı Şansı: &a%{chance}"
+        - "&7"
+        - "&a✔ Yükseltme Taşı"
+        - "{orb_status}"
+        - "{dust_status}"
+        - "&7"
+        - "&e► SAĞ TIKLA yükseltmek için!"
+        - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+    # Parchment system: ready lore (no orb/dust)
+    ready-parchment:
+      name: "&6Yükseltmeyi Başlat"
+      lore:
+        - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        - "&fMevcut Seviye: &e+{level}"
+        - "&fHedef Seviye: &a+{target_level}"
+        - "&7"
+        - "&fBaşarı Şansı: &a%{chance}"
+        - "&7"
+        - "&a✔ Yükseltme Parşömeni"
+        - "{luck_booster_status}"
+        - "&7"
+        - "&e► SAĞ TIKLA yükseltmek için!"
+        - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+    # Status placeholders for orb and dust
+    status:
+      orb-present: "&a✔ Koruma Küresi"
+      orb-absent: "&7○ Koruma Küresi (Opsiyonel)"
+      dust-present: "&a✔ Şans Tozu (+{bonus}%)"
+      dust-absent: "&7○ Şans Tozu (Opsiyonel)"
+      stone-missing: "&c✘ Yükseltme Taşı Gerekli"
+      stone-present: "&a✔ Yükseltme Taşı"
+      parchment-missing: "&c✘ Parşömen Gerekli"
+      parchment-present: "&a✔ Yükseltme Parşömeni"
+      luck-booster-present: "&a✔ Şans Parşömeni (+%50)"
+      luck-booster-absent: "&7○ Şans Parşömeni (Opsiyonel)"
+
+# ============================================
+# UPGRADE RESULT MESSAGES
+# ============================================
+
+upgrade:
+  success:
+    title: "&a&lBAŞARILI!"
+    subtitle: "&aYükseltme başarılı! Yeni seviye: +{level}"
+    chat: "&aItem başarıyla yükseltildi! Yeni seviye: &e+{level}"
+
+  fail:
+    title: "&c&lBAŞARISIZ!"
+    subtitle: "&cYükseltme başarısız!"
+    chat: "&cYükseltme başarısız!"
+
+  fail-protected:
+    title: "&c&lBAŞARISIZ!"
+    subtitle: "&cYükseltme başarısız! &aKoruma küresi sayesinde item korundu."
+    chat: "&cYükseltme başarısız! &aAncak koruma küresi item'ı korudu."
+
+  fail-destroyed:
+    title: "&c&lBAŞARISIZ!"
+    subtitle: "&cYükseltme başarısız! &4Ekipman Yandı!"
+    chat: "&cYükseltme başarısız ve ekipman yandı!"
+
+  fail-downgraded: "&cYükseltme başarısız! &eEkipman seviyesi düştü: +{level}"
+  fail-downgraded-zero: "&cYükseltme başarısız! &7Ekipman zaten +0 seviyesinde, daha fazla düşemez."
+
+  max-level: "&cBu item maksimum seviyede!"
+  not-upgradeable: "&cBu item güçlendirilemez!"
+  wrong-stone: "&cYanlış Yükseltme taşı! Gereken: {stone_name}"
+  no-stone-found: "&cBu seviye için uygun taş bulunamadı!"
+  materials-missing: "&cGerekli materyaller eksik!"
+  cooldown: "&cÇok hızlı! Lütfen biraz bekleyin."
+  parchment-in-stone-mode: "&cTaş sistemi aktif! Parşömen değil, yükseltme taşı kullanmalısınız."
+  stone-in-parchment-mode: "&cParşömen sistemi aktif! Taş değil, parşömen kullanmalısınız."
+
+# ============================================
+# COMMAND MESSAGES
+# ============================================
+
+# Command prefix for all messages
+command-prefix: ""
+
+commands:
+  # Global style helpers (prefix only used as placeholder text here)
+  # Palette: Lavender #9D8CFF, Light text #E0E0E0, Gold #FFD700
+
+  # Error messages
+  errors:
+    invalid-argument: "{prefix} <#FFD700>✦</#FFD700> <#9D8CFF><bold>Hata</bold></#9D8CFF> <#E0E0E0>Geçersiz argüman.</#E0E0E0>"
+    unknown-command: "{prefix} <#FFD700>✦</#FFD700> <#9D8CFF><bold>Hata</bold></#9D8CFF> <#E0E0E0>Bilinmeyen komut.</#E0E0E0>"
+    not-enough-arguments: "{prefix} <#FFD700>✦</#FFD700> <#9D8CFF><bold>Hata</bold></#9D8CFF> <#E0E0E0>Yetersiz argüman.</#E0E0E0>"
+    too-many-arguments: "{prefix} <#FFD700>✦</#FFD700> <#9D8CFF><bold>Hata</bold></#9D8CFF> <#E0E0E0>Çok fazla argüman.</#E0E0E0>"
+    invalid-stone-tier: "{prefix} <#FFD700>✦</#FFD700> <#9D8CFF><bold>Hata</bold></#9D8CFF> <#E0E0E0>Geçersiz taş seviyesi! <#FFD700>Kullanılabilir:</#FFD700> <#9D8CFF>low</#9D8CFF><#E0E0E0>,</#E0E0E0> <#9D8CFF>mid</#9D8CFF><#E0E0E0>,</#E0E0E0> <#9D8CFF>high</#9D8CFF><#E0E0E0>,</#E0E0E0> <#9D8CFF>legendary</#9D8CFF><#E0E0E0>,</#E0E0E0> <#9D8CFF>mythic</#9D8CFF></#E0E0E0>"
+    invalid-level-range: "{prefix} <#FFD700>✦</#FFD700> <#9D8CFF><bold>Hata</bold></#9D8CFF> <#E0E0E0>Level <#FFD700>0-{max_level}</#FFD700> arasında olmalıdır!</#E0E0E0>"
+    no-item-in-hand: "{prefix} <#FFD700>✦</#FFD700> <#9D8CFF><bold>Hata</bold></#9D8CFF> <#E0E0E0>Elinde bir item tutmalısın!</#E0E0E0>"
+    not-mmo-item: "{prefix} <#FFD700>✦</#FFD700> <#9D8CFF><bold>Hata</bold></#9D8CFF> <#E0E0E0>Bu bir <#FFD700>MMOItem</#FFD700> değil!</#E0E0E0>"
+
+  # GUI command
+  gui:
+    opened: "{prefix} <#FFD700>✦</#FFD700> <#9D8CFF><bold>Menü</bold></#9D8CFF> <#E0E0E0>Yükseltme menüsü açıldı!</#E0E0E0>"
+    vanilla-opened: "{prefix} <#FFD700>✦</#FFD700> <#9D8CFF><bold>Menü</bold></#9D8CFF> <#E0E0E0>Vanilla yükseltme menüsü açıldı!</#E0E0E0>"
+
+  # Give stone command
+  givestone:
+    success: "{prefix} <#FFD700>✦</#FFD700> <#E0E0E0><#9D8CFF>{player}</#9D8CFF> adlı oyuncuya <#FFD700>{amount}</#FFD700> adet <#9D8CFF>{stone_name}</#9D8CFF> verildi!</#E0E0E0>"
+    received: "{prefix} <#FFD700>✦</#FFD700> <#E0E0E0><#FFD700>{amount}</#FFD700> adet <#9D8CFF>{stone_name}</#9D8CFF> aldınız!</#E0E0E0>"
+
+  # Give orb command
+  giveorb:
+    success: "{prefix} <#FFD700>✦</#FFD700> <#E0E0E0><#9D8CFF>{player}</#9D8CFF> adlı oyuncuya <#FFD700>{amount}</#FFD700> adet <#9D8CFF>koruma küresi</#9D8CFF> verildi!</#E0E0E0>"
+    received: "{prefix} <#FFD700>✦</#FFD700> <#E0E0E0><#FFD700>{amount}</#FFD700> adet <#9D8CFF>koruma küresi</#9D8CFF> aldınız!</#E0E0E0>"
+
+  # Give dust command
+  givedust:
+    success: "{prefix} <#FFD700>✦</#FFD700> <#E0E0E0><#9D8CFF>{player}</#9D8CFF> adlı oyuncuya <#FFD700>{amount}</#FFD700> adet <#9D8CFF>şans tozu</#9D8CFF> verildi!</#E0E0E0>"
+    received: "{prefix} <#FFD700>✦</#FFD700> <#E0E0E0><#FFD700>{amount}</#FFD700> adet <#9D8CFF>şans tozu</#9D8CFF> aldınız!</#E0E0E0>"
+
+  # Give all command
+  giveall:
+    success: "{prefix} <#FFD700>✦</#FFD700> <#E0E0E0><#9D8CFF>{player}</#9D8CFF> adlı oyuncuya <#FFD700>tüm</#FFD700> upgrade materyalleri verildi!</#E0E0E0>"
+    received: "{prefix} <#FFD700>✦</#FFD700> <#E0E0E0><#FFD700>Tüm</#FFD700> upgrade materyallerini aldınız!</#E0E0E0>"
+
+  # Set level command
+  setlevel:
+    success: "{prefix} <#FFD700>✦</#FFD700> <#E0E0E0>Item'in yükseltme seviyesi <#FFD700>+{level}</#FFD700> olarak ayarlandı!</#E0E0E0>"
+
+  # Stats command
+  stats:
+    header: "<#9D8CFF>╔════════════════════════════════════╗</#9D8CFF>"
+    title: "<#9D8CFF>║</#9D8CFF> <#FFD700><bold>✦</bold></#FFD700> <#9D8CFF><bold>Item Bilgileri</bold></#9D8CFF>"
+    id: "<#9D8CFF>║</#9D8CFF> <#E0E0E0>ID:</#E0E0E0> <#FFD700>{id}</#FFD700>"
+    type: "<#9D8CFF>║</#9D8CFF> <#E0E0E0>Tip:</#E0E0E0> <#FFD700>{type}</#FFD700>"
+    level: "<#9D8CFF>║</#9D8CFF> <#E0E0E0>Yükseltme:</#E0E0E0> <#FFD700><bold>+{level}</bold></#FFD700>"
+    footer: "<#9D8CFF>╚════════════════════════════════════╝</#9D8CFF>"
+
+  # Reload command
+  reload:
+    success: "{prefix} <#FFD700>✦</#FFD700> <#9D8CFF><bold>Reload</bold></#9D8CFF> <#E0E0E0>Tüm konfigürasyonlar yeniden yüklendi!</#E0E0E0>"
+
+  # Debug command
+  debug:
+    enabled: "<#9D8CFF>[<#FFD700><bold>MaxiUpgrade</bold></#FFD700><#9D8CFF>]</#9D8CFF> <#FFD700><bold>DEBUG MODU AKTİF!</bold></#FFD700>"
+    disabled: "<#9D8CFF>[<#FFD700><bold>MaxiUpgrade</bold></#FFD700><#9D8CFF>]</#9D8CFF> <#E0E0E0><bold>DEBUG MODU DEVRE DIŞI!</bold></#E0E0E0>"
+
+  # Help command
+  help:
+    lines:
+      - "<#9D8CFF>╔════════════════════════════════════╗</#9D8CFF>"
+      - "<#9D8CFF>║</#9D8CFF> <#FFD700><bold>✦</bold></#FFD700> <#9D8CFF><bold>MaxiUpgradeableItems</bold></#9D8CFF> <#E0E0E0>- Yardım</#E0E0E0>"
+      - "<#9D8CFF>╠════════════════════════════════════╣</#9D8CFF>"
+      - "<#9D8CFF>║</#9D8CFF> <#FFD700>/MaxiUpgrade</#FFD700> <#E0E0E0>- Yükseltme menüsünü aç</#E0E0E0>"
+      - "<#9D8CFF>║</#9D8CFF> <#FFD700>/MaxiUpgrade help</#FFD700> <#E0E0E0>- Bu yardım menüsü</#E0E0E0>"
+      - "<#9D8CFF>║</#9D8CFF> <#FFD700>/MaxiUpgrade stats</#FFD700> <#E0E0E0>- Item bilgisi göster</#E0E0E0>"
+      - "<#9D8CFF>║</#9D8CFF> <#FFD700>/MaxiUpgrade givestone</#FFD700> <#E0E0E0><oyuncu> <tier> - Yükseltme taşı ver</#E0E0E0>"
+      - "<#9D8CFF>║</#9D8CFF> <#FFD700>/MaxiUpgrade giveorb</#FFD700> <#E0E0E0><oyuncu> - Koruma küresi ver</#E0E0E0>"
+      - "<#9D8CFF>║</#9D8CFF> <#FFD700>/MaxiUpgrade givedust</#FFD700> <#E0E0E0><oyuncu> - Şans tozu ver</#E0E0E0>"
+      - "<#9D8CFF>║</#9D8CFF> <#FFD700>/MaxiUpgrade giveall</#FFD700> <#E0E0E0><oyuncu> - Tüm materyalleri ver</#E0E0E0>"
+      - "<#9D8CFF>║</#9D8CFF> <#FFD700>/MaxiUpgrade setlevel</#FFD700> <#E0E0E0><seviye> - Item seviyesini ayarla</#E0E0E0>"
+      - "<#9D8CFF>║</#9D8CFF> <#FFD700>/MaxiUpgrade reload</#FFD700> <#E0E0E0>- Configleri yenile</#E0E0E0>"
+      - "<#9D8CFF>╚════════════════════════════════════╝</#9D8CFF>"
+
+
+# ============================================
+# MATERIAL DISPLAY NAMES
+# ============================================
+# These are used to identify items by their display names
+
+materials:
+  protection-orb: "Koruma Küresi"
+  luck-dust: "Şans Tozu"
+  upgrade-stone: "Yükseltme Taşı"
+
+  # Upgrade Stone Types
+  stones:
+    low: "<green>Düşük Seviye Yükseltme Taşı"
+    mid: "<yellow>Orta Seviye Yükseltme Taşı"
+    high: "<gold>Yüksek Seviye Yükseltme Taşı"
+    legendary: "<purple>Efsanevi Yükseltme Taşı"
+    mythic: "<light_purple>Mistik Yükseltme Taşı"
+
+# ============================================
+# ITEM CREATION (for give commands)
+# ============================================
+
+items:
+  # Protection Orb
+  protection-orb:
+    name: "&aKoruma Küresi"
+    lore:
+      - "&7━━━━━━━━━━━━━━━━━━━━"
+      - "&fYükseltme başarısız olduğunda"
+      - "&fitemi yanmaktan korur."
+      - ""
+      - "&a✔ &fItem korunur"
+      - "&e✔ &fTek kullanımlık"
+      - ""
+      - "&7Önerilen: +6 ve üzeri yükseltmeler"
+      - "&7━━━━━━━━━━━━━━━━━━━━"
+
+  # Luck Dust
+  luck-dust:
+    name: "&eŞans Tozu"
+    lore:
+      - "&7━━━━━━━━━━━━━━━━━━━━"
+      - "&fYükseltme başarı şansını artırır."
+      - ""
+      - "&e✦ &fHer toz: &a+%{bonus_per_dust} başarı şansı"
+      - "&e✦ &fMaksimum: &a{max_dust} adet"
+      - ""
+      - "&7Not: Tek kullanımlıktır"
+      - "&7━━━━━━━━━━━━━━━━━━━━"
+
+  # Upgrade Stones
+  upgrade-stones:
+    low:
+      name: "&aDüşük Seviye Yükseltme Taşı"
+      lore:
+        - "&7━━━━━━━━━━━━━━━━━━━━"
+        - "&f+0 ile +5 arası yükseltmeler için"
+        - "&fkullanılan temel yükseltme taşı."
+        - ""
+        - "&aBaşarı Oranı: &f%{success_rate}"
+        - "&cItem yanmaz"
+        - "&7━━━━━━━━━━━━━━━━━━━━"
+
+    mid:
+      name: "&eOrta Seviye Yükseltme Taşı"
+      lore:
+        - "&7━━━━━━━━━━━━━━━━━━━━"
+        - "&f+6 ile +10 arası yükseltmeler için"
+        - "&fkullanılan yükseltme taşı."
+        - ""
+        - "&eBaşarı Oranı: &f%{success_rate}"
+        - "&cDikkat: Item yanabilir!"
+        - "&7━━━━━━━━━━━━━━━━━━━━"
+
+    high:
+      name: "&6Yüksek Seviye Yükseltme Taşı"
+      lore:
+        - "&7━━━━━━━━━━━━━━━━━━━━"
+        - "&f+11 ile +15 arası yükseltmeler için"
+        - "&fkullanılan güçlü yükseltme taşı."
+        - ""
+        - "&6Başarı Oranı: &f%{success_rate}"
+        - "&cDikkat: Item yanabilir!"
+        - "&7━━━━━━━━━━━━━━━━━━━━"
+
+    legendary:
+      name: "&5Efsanevi Yükseltme Taşı"
+      lore:
+        - "&7━━━━━━━━━━━━━━━━━━━━"
+        - "&f+16 ile +20 arası yükseltmeler için"
+        - "&fkullanılan efsanevi yükseltme taşı."
+        - ""
+        - "&5Başarı Oranı: &f%{success_rate}"
+        - "&cDikkat: Item yanabilir!"
+        - "&7━━━━━━━━━━━━━━━━━━━━"
+
+    mythic:
+      name: "&dMistik Yükseltme Taşı"
+      lore:
+        - "&7━━━━━━━━━━━━━━━━━━━━"
+        - "&f+21 ile +25 arası yükseltmeler için"
+        - "&fkullanılan en güçlü yükseltme taşı."
+        - ""
+        - "&dBaşarı Oranı: &f%{success_rate}"
+        - "&cDikkat: Item yanabilir!"
+        - "&7━━━━━━━━━━━━━━━━━━━━"
+
+# ============================================
+# STAT DISPLAY NAMES (for Lore Updates)
+# ============================================
+
+stats:
+  attack-damage:
+    - "Saldırı Gücü"
+    - "Attack Damage"
+    - "Güç"
+    - "Hasar"
+
+  defense:
+    - "Defans"
+    - "Defense"
+    - "Savunma"
+
+  max-health:
+    - "Can"
+    - "Health"
+    - "Max Health"
+    - "Sağlık"
+
+  armor:
+    - "Zırh"
+    - "Armor"
+
+  critical-chance:
+    - "Kritik Hasar Şansı"
+    - "Critical Chance"
+    - "Kritik"
+
+  attack-speed:
+    - "Saldırı Hızı"
+    - "Attack Speed"
+
+# ============================================
+# DEBUG MESSAGES
+# ============================================
+
+debug:
+  gui-created: "[DEBUG] {player} için upgrade GUI oluşturuluyor"
+  gui-closed: "[DEBUG] {player} GUI'yi kapattı, itemler geri veriliyor"
+  decoration-placed: "[DEBUG] Dekorasyon camları yerleştirildi"
+  slots-created: "[DEBUG] Ana slotlar oluşturuldu - Item:{item}, Stone:{stone}, Orb:{orb}, Dust:{dust}"
+  button-update: "[DEBUG] Upgrade butonu güncelleniyor"
+  click-detected: "[DEBUG] {player} clicked slot: {slot}"
+  upgrade-attempt: "[DEBUG] Upgrade denemesi başlatılıyor"
+  upgrade-result: "[DEBUG] Upgrade sonucu: {result}"

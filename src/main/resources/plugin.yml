@@ -1,0 +1,43 @@
+name: maxiUpgrade
+main: com.maxi.maxiUpgrade.MaxiUpgradePlugin
+version: 1.0.0
+api-version: "1.21"
+depend: [MMOItems, MythicLib]
+
+commands:
+  upgradeableitems:
+    aliases: [mupgradeableitems, mupgrade, upgrade]
+    description: "Item upgrade system"
+    usage: "/upgradeableitems"
+permissions:
+  upgradeableitems.use:
+    default: true
+  upgradeableitems.givestone:
+    default: op
+  upgradeableitems.giveorb:
+    default: op
+  upgradeableitems.givedust:
+    default: op
+  upgradeableitems.giveall:
+    default: op
+  upgradeableitems.setlevel:
+    default: op
+  upgradeableitems.reload:
+    default: op
+  upgradeableitems.debug:
+    default: op
+  upgradeableitems.admin:
+    default: op
+    children:
+      upgradeableitems.givestone: true
+      upgradeableitems.giveorb: true
+      upgradeableitems.givedust: true
+      upgradeableitems.giveall: true
+      upgradeableitems.setlevel: true
+      upgradeableitems.reload: true
+      upgradeableitems.debug: true
+  upgradeableitems.*:
+    default: op
+    children:
+      upgradeableitems.use: true
+      upgradeableitems.admin: true

@@ -1,0 +1,360 @@
+# ============================================
+# MaxiUpgrade - Main Configuration
+# ============================================
+
+# Database Configuration (Not implemented yet)
+# database-type: sqlite #sqlite, mongodb, mysql
+# connection-string: ""
+# database-name: "rupgradeable-items"
+# auto-save-interval: 4000
+
+# ============================================
+# UPGRADE MODE
+# ============================================
+# true = Vanilla items only (swords, armor, tools)
+# false = MMOItems only (requires MMOItems plugin)
+vanilla-mode: false
+
+# General Settings
+burn-items: true  # Should items be destroyed on failed upgrade (if stone allows it)
+debug: false  # Enable debug logging
+upgrade-cooldown: 1000  # Cooldown between upgrades in milliseconds (prevents spam clicking)
+
+# ============================================
+# MIGRATION CONFIG
+# ============================================
+migration:
+  enabled: true
+  micro-cache-ms: 300
+  coverage:
+    interact: true
+    swap: true
+    click: true
+    drag: true
+    entity-pickup: true
+    inventory-move: false
+    inventory-pickup: false
+
+# ============================================
+# GUI CONFIGURATION
+# ============================================
+
+gui:
+  # Enable animated GUI effects (upgrade button glow, etc.)
+  enable-animations: true
+
+  # Animation speed in ticks (20 ticks = 1 second)
+  animation-speed: 10
+
+  # Multi-slot system for stones/parchments
+  # false = Use single slot (classic mode)
+  # true = Use multiple slots (3x3 area, place stone anywhere)
+  use-multi-slot: false
+  # Close inventory after upgrade attempt
+  # true = Inventory closes after upgrade (success or fail)
+  # false = Inventory stays open after upgrade
+  close-inventory-on-upgrade: true
+  # Slot positions (0-53, for 6-row inventory)
+  # Layout when multi-slot enabled:
+  #   Row 1: [0][1][2][3][INFO][5][6][7][8]
+  #   Row 2: [9][10][11][3x3][3x3][3x3][15][16][17]
+  #   Row 3: [18][19][ITEM][3x3][3x3][3x3][OUTPUT][25][26]
+  #   Row 4: [27][28][29][3x3][3x3][3x3][33][34][35]
+  #   Row 5: [36][37][38][39][40][41][42][43][44]
+  #   Row 6: [CLOSE][46][47][48][49][50][51][52][UPGRADE]
+  slots:
+    item: 31        # Main item to upgrade
+    stone: 33       # Upgrade stone slot
+    orb: 38         # Protection orb slot (optional)
+    dust: 29        # Luck dust slot (optional)
+    upgrade-button: 42  # Upgrade button slot
+    info-star: 4
+    close-button: 0
+
+    # Multi-slot mode: List of slots for stones/parchments
+    # 3x3 area centered in the GUI (Row 2-3-4, columns 3-4-5)
+    # Player can place stone/parchment in ANY of these slots
+    stone-slots:
+      - 21  # Row 2
+      - 22
+      - 23
+      - 30  # Row 3
+      - 31
+      - 32
+      - 39  # Row 4
+      - 40
+      - 41
+
+# ============================================
+# UPGRADE SYSTEM MODE
+# ============================================
+# true = Use old stone-based system (different stones for different levels)
+#        → Orb and Dust slots are ENABLED
+# false = Use new parchment-based system (universal parchment for all levels)
+#        → Orb and Dust slots are DISABLED (not needed in parchment system)
+use-stone-system: true
+
+# ============================================
+# UPGRADE STONES
+# ============================================
+# Upgrade stones are now fully configured in items.yml
+# This includes materials, names, lore, success rates, and level ranges
+# See items.yml for all upgrade stone configurations
+
+# ============================================
+# STAT MULTIPLIERS
+# ============================================
+# These control how much stats increase per upgrade level
+# For percentage-based stats, use multipliers like 1.05 (5% increase)
+# For flat-based stats, use flat numbers like 0.5 (+0.5 per level)
+
+stat-multipliers:
+
+  pvp_damage:
+    nbt-key: "MMOITEMS_PVP_DAMAGE"
+    lore-names:
+      - "PvP Hasarı"
+      - "PVP Damage"
+    type: PERCENTAGE
+    value: 1.01 # seviye başına %1 artış
+
+  # fire_damage:
+  #   nbt-key: "MMOITEMS_FIRE_DAMAGE"
+  #   lore-names:
+  #     - "Ateş Hasarı"
+  #     - "Fire Damage"
+  #   type: PERCENTAGE
+  #   value: 1.01 # seviye başına %1 artış
+
+
+  attack-damage:
+    nbt-key: "MMOITEMS_ATTACK_DAMAGE"
+    lore-names:
+      - "Saldırı Gücü"
+      - "Attack Damage"
+      - "Güç"
+    type: PERCENTAGE
+    value: 1.05          # 2% increase per level
+
+  defense:
+    nbt-key: "MMOITEMS_DEFENSE"
+    lore-names:
+      - "Defans"
+      - "Defense"
+      - "Savunma"
+      - "Direnç"
+    type: PERCENTAGE
+    value: 1.03          # 3% increase per level
+
+  max-health:
+    nbt-key: "MMOITEMS_MAX_HEALTH"
+    lore-names:
+      - "Can"
+      - "Health"
+      - "Max Health"
+      - "Sağlık"
+    type: PERCENTAGE
+    value: 1.02          # 2% increase per level
+
+  armor:
+    nbt-key: "MMOITEMS_ARMOR"
+    lore-names:
+      - "Zırh"
+      - "Armor"
+    type: PERCENTAGE
+    value: 1.03          # 3% increase per level
+
+  critical-chance:
+    nbt-key: "MMOITEMS_CRITICAL_STRIKE_CHANCE"
+    lore-names:
+      - "Kritik Hasar Şansı"
+      - "Critical Chance"
+      - "Kritik"
+    type: FLAT
+    value: 0.5           # +0.5% per level (flat bonus)
+
+# ============================================
+# LUCK DUST CONFIGURATION
+# ============================================
+
+luck-dust:
+  bonus-per-dust: 2      # Success rate bonus per dust (in percentage)
+  max-bonus: 50          # Maximum total bonus from dust
+
+# ============================================
+# MAXIMUM UPGRADE LEVEL
+# ============================================
+
+max-upgrade-level: 25
+
+# ============================================
+# UPGRADE CHANCES (LEVEL-BASED)
+# ============================================
+# Configure success chances for each upgrade level
+# Format: "from_level -> to_level: chance"
+# If a level is not defined, it uses the default chance
+# This is used when use-stone-system: false (parchment system)
+
+upgrade-chances:
+  enabled: true           # Enable custom level-based chances
+  default-chance: 100.0    # Default chance if level not specified
+  chances:
+    # Level transitions: current_level: chance_to_next_level
+    0: 100.0    # +0 -> +1: 100%
+    1: 100.0    # +1 -> +2: 100%
+    2: 100.0     # +2 -> +3: 90%
+    3: 100.0    # +3 -> +4: 70%
+    4: 100.0     # +4 -> +5: 50%
+    5: 80.0    # +5 -> +6: 35%
+    6: 80.0     # +6 -> +7: 15%
+    7: 80.0      # +7 -> +8: 4%
+    8: 80.0     # +8 -> +9: 2%
+    9: 80.0      # +9 -> +10: 1%
+    10: 60.0
+    11: 60.0
+    12: 60.0
+    13: 60.0
+    14: 60.0
+    15: 40.0
+    16: 40.0
+    17: 40.0
+    18: 40.0
+    19: 40.0
+    20: 20.0
+    21: 20.0
+    22: 20.0
+    23: 20.0
+    24: 20.0
+    # Add more levels as neeeded...
+
+# ============================================
+# ALLOWED EQUIPMENT FILTER
+# ============================================
+# Configure which equipment types can be upgraded
+# This filters items when placing in the GUI
+
+equipment-filter:
+  enabled: true           # Enable equipment type filtering
+
+  # MMOItems mode (vanilla-mode: false)
+  # List of allowed MMOItems types (case-insensitive)
+  # Examples: SWORD, AXE, ARMOR, BOW, STAFF, TOOL, CONSUMABLE, etc.
+  mmoitems-types:
+    - SWORD
+    - AXE
+    - GREATSWORD
+    - SPEAR
+    - STAFF
+    - BOW
+    - CROSSBOW
+    - DAGGER
+    - HAMMER
+    - ARMOR
+    - HELMET
+    - CHESTPLATE
+    - LEGGINGS
+    - BOOTS
+
+  # Vanilla mode (vanilla-mode: true)
+  # List of allowed vanilla material types (case-insensitive)
+  # Use material names without prefix (e.g., SWORD matches DIAMOND_SWORD, IRON_SWORD, etc.)
+  # Or use full material names for specific items
+  vanilla-types:
+    - SWORD
+    - AXE
+    - PICKAXE
+    - SHOVEL
+    - HOE
+    - HELMET
+    - CHESTPLATE
+    - LEGGINGS
+    - BOOTS
+    - BOW
+    - CROSSBOW
+    - TRIDENT
+    - MACE
+    - ELYTRA
+
+# ============================================
+# ITEM CUSTOMIZATION
+# ============================================
+# Item materials, names, and lore are now configured in items.yml
+# This allows for easier customization and better organization
+
+
+# ============================================
+# UPGRADE BROADCAST
+# ============================================
+# Broadcast a message to all players when someone upgrades to high levels
+
+upgrade-broadcast:
+  enabled: true           # Enable/disable broadcast messages
+  min-level: 6            # Minimum level to trigger broadcast (6 = +6 and above)
+
+  # ============================================
+  # UPGRADE CHANCES (LEVEL-BASED)
+  # ============================================
+  # Configure success chances for each upgrade level
+  # Format: "from_level -> to_level: chance"
+  # If a level is not defined, it uses the default chance
+  # This is used when use-stone-system: false (parchment system)
+
+
+
+  # Example: Add more stats like this:
+  # attack-speed:
+  #   nbt-key: "MMOITEMS_ATTACK_SPEED"
+  #   lore-names:
+  #     - "Saldırı Hızı"
+  #     - "Attack Speed"
+  #   type: PERCENTAGE
+  #   value: 1.02
+
+# ============================================
+# EXCLUDED KEYWORDS (Lore Filter)
+# ============================================
+# Keywords to exclude when updating item lore
+# Lines containing these keywords will NOT be modified during stat updates
+# This prevents accidental modification of duration, mana cost, etc.
+
+excluded-keywords:
+  - "Zırhlı"
+  - "Süre"
+  - "Duration"
+  - "Mana"
+  - "Mana Cost"
+  - "Güçlendirilmiş"
+  - "Dayanıklılı"
+  - "Bekleme"
+  - "Bekleme Süresi"
+  - "Cooldown"
+  - "Güçlendirici"
+  - "Enhancer"
+  - "Power"
+  - "Saf"
+
+# ============================================
+# MaxiUpgrade - Main Configuration
+# ============================================
+
+# Database Configuration (Not implemented yet)
+# database-type: sqlite #sqlite, mongodb, mysql
+# connection-string: ""
+# database-name: "MaxiUpgrade-items"
+# auto-save-interval: 4000
+
+prefix: false
+
+# ============================================
+# MMOITEMS SETTINGS
+# ============================================
+# Make all MMOItems unbreakable when upgrading
+# true = All MMOItems will become unbreakable after upgrade
+# false = Items keep their original durability settings
+make-mmoitems-unbreakable: false
+
+# ============================================
+# UPGRADE MODE
+# ============================================
+# true = Vanilla items only (swords, armor, tools)
+# false = MMOItems only (requires MMOItems plugin)

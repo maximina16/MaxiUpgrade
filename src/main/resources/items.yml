@@ -1,0 +1,680 @@
+# ============================================
+# MaxiUpgrade - Items Configuration
+# ============================================
+# This file contains ALL item configurations:
+# - Materials, names, and lore (visual)
+# - Mechanics like success rates and level ranges
+# - GUI decoration items
+# Everything about items is configured here!
+
+# ============================================
+# GUI DECORATION ITEMS
+# ============================================
+# Glass panes used to decorate the GUI
+
+gui-decoration-top-row:
+  material: BRICK
+  name: " "
+  lore: []
+  custom-model-data: 10000
+  # glowing: false
+
+gui-decoration-second-row:
+  material: BRICK
+  name: " "
+  lore: []
+  custom-model-data: 10000
+  # glowing: false
+
+gui-decoration-third-row:
+  material: BRICK
+  name: " "
+  lore: []
+  custom-model-data: 10000
+  # glowing: false
+
+gui-decoration-rest:
+  material: BRICK
+  name: " "
+  lore: []
+  custom-model-data: 10000
+  # glowing: false
+
+# ============================================
+# EMPTY SLOT INDICATORS
+# ============================================
+# Placeholder items shown when slots are empty
+
+empty-slot-item:
+  material: RED_STAINED_GLASS_PANE
+  name: "&c⬇ &fEkipman Yeri &c⬇"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+    - "&fYükseltmek istediğiniz"
+    - "&fekipmanı buraya koyun."
+    - ""
+    - "&e✦ &fSilah, Zırh, Aksesuar"
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+  custom-model-data: 0
+  glowing: true
+
+empty-slot-stone:
+  material: LIME_STAINED_GLASS_PANE
+  name: "&a⬇ &fYükseltme Taşı &a⬇"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+    - "&fYükseltme taşınızı buraya"
+    - "&fkoyun."
+    - ""
+    - "&e✦ &fDoğru seviye taşı gerekli"
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+  custom-model-data: 0
+  glowing: true
+
+empty-slot-scroll:
+  material: RED_STAINED_GLASS_PANE
+  name: "&a⬇ &fYükseltme Materyali &a⬇"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+    - "&fYükseltme materyalinizi"
+    - "&fburaya koyun."
+    - ""
+    - "&e✦ &fParşömen veya Taş"
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+  custom-model-data: 0
+  glowing: false
+
+empty-slot-parchment:
+  material: LIGHT_BLUE_STAINED_GLASS_PANE
+  name: "&b⬇ &fYükseltme Parşömeni &b⬇"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+    - "&fYükseltme parşömeninizi"
+    - "&fburaya koyun."
+    - ""
+    - "&e✦ &fEvrensel, Güçlendirilmiş, Kutsanmış"
+    - "&e✦ &fve Şans Arttırıcı Parşömen kullanabilirsiniz."
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+  custom-model-data: 0
+  glowing: false
+
+empty-slot-orb:
+  material: GREEN_STAINED_GLASS_PANE
+  name: "&2⬇ &fKoruma Küresi &2⬇"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+    - "&fKoruma küresi &7(Opsiyonel)"
+    - "&fYükseltme başarısız olursa"
+    - "&fitem korunur."
+    - ""
+    - "&e✦ &f+6 ve üzeri için önerilir"
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+  custom-model-data: 0
+  glowing: true
+
+empty-slot-dust:
+  material: YELLOW_STAINED_GLASS_PANE
+  name: "&e⬇ &fŞans Tozu &e⬇"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+    - "&fŞans tozu &7(Opsiyonel)"
+    - "&fBaşarı şansını artırır."
+    - ""
+    - "&e✦ &fHer toz +%{bonus_per_dust} şans"
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+  custom-model-data: 0
+  glowing: true
+
+empty-slot-luck-booster:
+  material: PAPER
+  name: "&6⬇ &fŞans Parşömeni &6⬇"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+    - "&fŞans arttırıcı parşömen"
+    - "&7(Opsiyonel)"
+    - ""
+    - "&e✦ &fBaşarı şansını %50 artırır"
+    - "&e✦ &fSadece 1 adet kullanılabilir"
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+  custom-model-data: 0
+  glowing: false
+
+# ============================================
+# PROTECTION ORB
+# ============================================
+
+protection-orb:
+
+  material: PAPER
+  name: "&aKoruma Küresi"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+    - "&fYükseltme başarısız olduğunda"
+    - "&fitemi yanmaktan korur."
+    - ""
+    - "&a✔ &fItem korunur"
+    - "&e✔ &fTek kullanımlık"
+    - ""
+    - "&7Önerilen: +6 ve üzeri yükseltmeler"
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+  enchantment: PROJECTILE_PROTECTION
+  enchantment-level: 1
+  hide-enchants: true
+  custom-model-data: 11017
+  glowing: false
+  unbreakable: false
+  hide-attributes: false
+  hide-unbreakable: false
+  # skull-texture: "" # Base64 texture for PLAYER_HEAD material
+  # damage: 0 # Item durability damage
+
+# ============================================
+# LUCK DUST
+# ============================================
+
+luck-dust:
+
+  material: PAPER
+  name: "&eŞans Tozu"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+    - "&fYükseltme başarı şansını artırır."
+    - ""
+    - "&e✦ &fHer toz: &a+%{bonus_per_dust} başarı şansı"
+    - "&e✦ &fMaksimum: &a{max_dust} adet"
+    - ""
+    - "&7Not: Tek kullanımlıktır"
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+  custom-model-data: 10874
+  glowing: true
+  unbreakable: false
+  hide-attributes: false
+  hide-unbreakable: false
+  # enchantment: UNBREAKING # Optional enchantment
+  # enchantment-level: 1
+  # hide-enchants: true
+  # skull-texture: "" # Base64 texture for PLAYER_HEAD material
+
+# ============================================
+# UPGRADE STONES
+# ============================================
+# Each stone contains both visual and mechanical properties
+
+low-stone:
+
+  # Visual Properties
+  material: PAPER
+  name: "&aDüşük Seviye Yükseltme Taşı"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+    - "&f+0 ile +5 arası yükseltmeler için"
+    - "&fkullanılan temel yükseltme taşı."
+    - ""
+    - "&aBaşarı Oranı: &f%{success_rate}"
+    - "&cItem yanmaz"
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+  enchantment: UNBREAKING
+  enchantment-level: 1
+  custom-model-data: 10861
+  hide-enchants: true
+  glowing: false
+  unbreakable: false
+  hide-attributes: true
+  hide-unbreakable: false
+  # skull-texture: "" # Base64 texture for PLAYER_HEAD material
+  # damage: 0 # Item durability damage
+
+  # Mechanical Properties
+  mmo-item-id: "LOW_UPGRADE_STONE"
+  mmo-item-type: "MATERIAL"
+  base-success-rate: 100
+  min-level: 0
+  max-level: 5
+  can-destroy: false
+
+mid-stone:
+
+  # Visual Properties
+  material: PAPER
+  name: "&eOrta Seviye Yükseltme Taşı"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+    - "&f+6 ile +10 arası yükseltmeler için"
+    - "&fkullanılan yükseltme taşı."
+    - ""
+    - "&eBaşarı Oranı: &f%{success_rate}"
+    - "&cDikkat: Item yanabilir!"
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+  enchantment: UNBREAKING
+  enchantment-level: 2
+  custom-model-data: 10862
+  hide-enchants: true
+  glowing: false
+  unbreakable: false
+  hide-attributes: true
+  hide-unbreakable: false
+  # skull-texture: "" # Base64 texture for PLAYER_HEAD material
+  # damage: 0 # Item durability damage
+
+  # Mechanical Properties
+  mmo-item-id: "MID_UPGRADE_STONE"
+  mmo-item-type: "MATERIAL"
+  base-success-rate: 80
+  min-level: 6
+  max-level: 10
+  can-destroy: true
+
+high-stone:
+
+  # Visual Properties
+  material: PAPER
+  name: "&6Yüksek Seviye Yükseltme Taşı"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+    - "&f+11 ile +15 arası yükseltmeler için"
+    - "&fkullanılan güçlü yükseltme taşı."
+    - ""
+    - "&6Başarı Oranı: &f%{success_rate}"
+    - "&cDikkat: Item yanabilir!"
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+  enchantment: UNBREAKING
+  enchantment-level: 3
+  custom-model-data: 10863
+  hide-enchants: true
+  glowing: false
+  unbreakable: false
+  hide-attributes: true
+  hide-unbreakable: false
+  # skull-texture: "" # Base64 texture for PLAYER_HEAD material
+  # damage: 0 # Item durability damage
+
+  # Mechanical Properties
+  mmo-item-id: "HIGH_UPGRADE_STONE"
+  mmo-item-type: "MATERIAL"
+  base-success-rate: 60
+  min-level: 11
+  max-level: 15
+  can-destroy: true
+
+legendary-stone:
+
+  # Visual Properties
+  material: PAPER
+  name: "&5Efsanevi Yükseltme Taşı"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+    - "&f+16 ile +20 arası yükseltmeler için"
+    - "&fkullanılan efsanevi yükseltme taşı."
+    - ""
+    - "&5Başarı Oranı: &f%{success_rate}"
+    - "&cDikkat: Item yanabilir!"
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+  enchantment: UNBREAKING
+  enchantment-level: 4
+  custom-model-data: 10865
+  hide-enchants: true
+  glowing: false
+  unbreakable: false
+  hide-attributes: true
+  hide-unbreakable: false
+  # skull-texture: "" # Base64 texture for PLAYER_HEAD material
+  # damage: 0 # Item durability damage
+
+  # Mechanical Properties
+  mmo-item-id: "LEGENDARY_UPGRADE_STONE"
+  mmo-item-type: "MATERIAL"
+  base-success-rate: 40
+  min-level: 16
+  max-level: 20
+  can-destroy: true
+
+mythic-stone:
+
+  # Visual Properties
+  material: PAPER
+  name: "&dMistik Yükseltme Taşı"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+    - "&f+21 ile +25 arası yükseltmeler için"
+    - "&fkullanılan en güçlü yükseltme taşı."
+    - ""
+    - "&dBaşarı Oranı: &f%{success_rate}"
+    - "&cDikkat: Item yanabilir!"
+    - "&7━━━━━━━━━━━━━━━━━━━━"
+  enchantment: UNBREAKING
+  enchantment-level: 5
+  custom-model-data: 10864
+  hide-enchants: true
+  glowing: true
+  unbreakable: false
+  hide-attributes: true
+  hide-unbreakable: false
+  # skull-texture: "" # Base64 texture for PLAYER_HEAD material
+  # damage: 0 # Item durability damage
+
+  # Mechanical Properties
+  mmo-item-id: "MYTHIC_UPGRADE_STONE"
+  mmo-item-type: "MATERIAL"
+  base-success-rate: 20
+  min-level: 21
+  max-level: 25
+  can-destroy: true
+
+# ============================================
+# PARCHMENT SYSTEM (NEW UPGRADE SYSTEM)
+# ============================================
+# Universal upgrade system that works with all levels
+
+universal-parchment:
+
+  # Visual Properties
+  material: PAPER
+  name: "&bEvrensel Yükseltme Parşömeni"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - "&fTüm seviyelerde kullanılabilen"
+    - "&fevrensel yükseltme parşömeni."
+    - ""
+    - "&bSeviye: &f0-25 arası tümü"
+    - "&aBaşarı Oranı: &f{success_rate}"
+    - ""
+    - "&7Not: Başarı şansı seviyeye göre değişir"
+    - "&cDikkat: Yüksek seviyelerde item yanabilir!"
+    - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  enchantment: UNBREAKING
+  enchantment-level: 1
+  custom-model-data: 10330
+  hide-enchants: true
+  glowing: false
+  unbreakable: false
+  hide-attributes: true
+  hide-unbreakable: false
+
+  # Mechanical Properties
+  mmo-item-id: "UNIVERSAL_PARCHMENT"
+  mmo-item-type: "MATERIAL"
+  # Success rates per level (0-5: 100%, 6-10: 80%, 11-15: 60%, 16-20: 40%, 21-25: 20%)
+  base-success-rate: 100  # This will be calculated based on item level
+  min-level: 0
+  max-level: 25
+  can-destroy: true
+  # Special flag to indicate this is a universal parchment
+  is-universal: true
+
+blessed-parchment:
+
+  # Visual Properties
+  material: PAPER
+  name: "&eGüçlendirilmiş Parşömen"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - "&fKutsal güçlerle zenginleştirilmiş"
+    - "&fözel bir yükseltme parşömeni."
+    - ""
+    - "&aSeviye: &f0-25 arası tümü"
+    - "&aBaşarı Oranı: &a%100"
+    - ""
+    - "&e✦ &fGarantili yükseltme!"
+    - "&cDikkat: Çok nadir ve değerlidir!"
+    - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  enchantment: UNBREAKING
+  enchantment-level: 3
+  custom-model-data: 10397
+  hide-enchants: true
+  glowing: true
+  unbreakable: false
+  hide-attributes: true
+  hide-unbreakable: false
+
+  # Mechanical Properties
+  mmo-item-id: "BLESSED_PARCHMENT"
+  mmo-item-type: "MATERIAL"
+  base-success-rate: 100  # Always 100% success
+  min-level: 0
+  max-level: 25
+  can-destroy: false  # Never destroys item
+  is-universal: true
+  is-blessed: true  # Special flag for blessed parchment
+
+luck-booster-parchment:
+
+  # Visual Properties
+  material: PAPER
+  name: "&6Şans Arttırıcı Parşömen"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - "&fMevcut başarı şansını artıran"
+    - "&fözel bir destek parşömeni."
+    - ""
+    - "&eMevcut şansı: &a%50 arttırır"
+    - "&7(Örn: %40 → %60)"
+    - ""
+    - "&e✦ &fEvrensel parşömen ile birlikte kullanılır"
+    - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  enchantment: UNBREAKING
+  enchantment-level: 2
+  custom-model-data: 10401
+  hide-enchants: true
+  glowing: true
+  unbreakable: false
+  hide-attributes: true
+  hide-unbreakable: false
+
+  # Mechanical Properties (not an upgrade stone, but a booster)
+  mmo-item-id: "LUCK_BOOSTER_PARCHMENT"
+  mmo-item-type: "MATERIAL"
+  # This is a special booster item
+  is-luck-booster: true
+  luck-boost-multiplier: 1.5  # Multiplies current success rate by 1.5 (50% increase)
+
+downgrade-parchment:
+
+  # Visual Properties
+  material: PAPER
+  name: "&cKoruyucu Parşömen"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - "&fYükseltme başarısız olursa"
+    - "&fekipman yanmak yerine seviyesi"
+    - "&f1 düşer."
+    - ""
+    - "&cSeviye: &f0-25 arası tümü"
+    - "&aBaşarı Oranı: &f{success_rate}"
+    - ""
+    - "&e✦ &fEkipman korunur!"
+    - "&c✦ &fBaşarısızlıkta -1 seviye"
+    - "&7(Örn: +10 → +9)"
+    - ""
+    - "&b✦ &fEvrensel veya Güçlendirilmiş"
+    - "&b  &fparşömen ile birlikte kullanılabilir!"
+    - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  enchantment: UNBREAKING
+  enchantment-level: 2
+  custom-model-data: 10399
+  hide-enchants: true
+  glowing: true
+  unbreakable: false
+  hide-attributes: true
+  hide-unbreakable: false
+
+  # Mechanical Properties
+  mmo-item-id: "DOWNGRADE_PARCHMENT"
+  mmo-item-type: "MATERIAL"
+  # Success rates per level (same as universal parchment)
+  base-success-rate: 100
+  min-level: 0
+  max-level: 25
+  can-destroy: false  # Never destroys, only downgrades
+  is-universal: true
+  is-downgrade: true  # Special flag for downgrade parchment
+
+  # ============================================
+  # CONFIGURATION NOTES
+  # ============================================
+  #
+  # VISUAL PROPERTIES (All items):
+  # - material: Bukkit Material (e.g., DIAMOND, EMERALD, SLIME_BALL, PLAYER_HEAD)
+  # - name: Display name with color codes (&a, &e, etc.)
+  # - lore: List of lore lines with color codes
+  # - enchantment: Bukkit Enchantment name (optional)
+  # - enchantment-level: Level of enchantment (optional)
+  # - hide-enchants: Hide enchantment from lore (true/false)
+  # - custom-model-data: Custom model data for resource packs (optional)
+  # - glowing: Add enchantment glow without enchantment (true/false)
+  # - unbreakable: Make item unbreakable (true/false)
+  # - hide-attributes: Hide item attributes from lore (true/false)
+  # - hide-unbreakable: Hide unbreakable tag from lore (true/false)
+  # - skull-texture: Base64 texture for PLAYER_HEAD material (optional)
+  # - damage: Set item durability damage (optional, for tools/armor)
+  #
+  # MECHANICAL PROPERTIES (Upgrade stones only):
+  # - mmo-item-id: MMOItems item ID to match against
+  # - mmo-item-type: MMOItems type (MATERIAL, CONSUMABLE, etc.)
+  # - base-success-rate: Base success rate 0-100 (percentage)
+  # - min-level: Minimum upgrade level this stone can be used for
+  # - max-level: Maximum upgrade level this stone can be used for
+  # - can-destroy: Can this stone destroy the item on failure? (true/false)
+  #
+  # PLACEHOLDERS in lore:
+  # - {bonus_per_dust}: Bonus per luck dust (from config.yml)
+  # - {max_dust}: Maximum luck dust count (calculated)
+  # - {success_rate}: Success rate for upgrade stones (from this file)
+  #
+  # COLOR CODES:
+  # &0 Black     &8 Dark Gray
+  # &1 Dark Blue &9 Blue
+  # &2 Dark Green &a Green
+  # &3 Dark Aqua &b Aqua
+  # &4 Dark Red  &c Red
+  # &5 Dark Purple &d Light Purple
+  # &6 Gold      &e Yellow
+  # &7 Gray      &f White
+  # &k Obfuscated &l Bold
+  # &m Strikethrough &n Underline
+  # &o Italic    &r Reset
+  #
+  # EXAMPLE - Add a new upgrade stone tier:
+  #
+  # ultra-stone:
+  #   material: DIAMOND
+  #   name: "&bUltra Yükseltme Taşı"
+  #   lore:
+  #     - "&7+26 ile +30 için"
+  #     - "&bBaşarı: &f%{success_rate}"
+  #   enchantment: UNBREAKING
+  #   enchantment-level: 6
+  #   custom-model-data: 6
+  #   hide-enchants: true
+  #   glowing: true
+  #   hide-attributes: true
+  #   mmo-item-id: "ULTRA_UPGRADE_STONE"
+  #   mmo-item-type: "MATERIAL"
+  #   base-success-rate: 10
+  #   min-level: 26
+  #   max-level: 30
+  #   can-destroy: true
+
+  # glowing: false
+
+# ============================================
+# GUI BUTTONS
+# ============================================
+# Customizable buttons in the upgrade GUI
+
+gui-info-star:
+  material: NETHER_STAR
+  name: "&6Ekipman Yükseltme Menüsü"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - "&fEkipmanlarınızı yükseltme taşları yükseltebilirsiniz!"
+    - "&7"
+    - "&eBaşarı Oranları:"
+    - "&7• +0 → +5: &a%100"
+    - "&7• +6 → +10: &e%80"
+    - "&7• +11 → +15: &6%60"
+    - "&7• +16 → +20: &c%40"
+    - "&7• +21 → +25: &4%20"
+    - "&7"
+    - "&cDikkat: &f+6'dan sonra item yanabilir!"
+    - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  custom-model-data: 0
+  glowing: true
+
+
+
+gui-close-button:
+  material: BRICK
+  name: "&c✖ Kapat"
+  lore:
+    - "&7Menüyü kapatmak için tıklayın."
+  custom-model-data: 10000
+  glowing: false
+
+
+
+gui-upgrade-button-ready:
+  material: NETHER_STAR
+  name: "&6Yükseltmeyi Başlat"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - "&fMevcut Seviye: &e+{level}"
+    - "&fHedef Seviye: &a+{target_level}"
+    - "&7"
+    - "&fBaşarı Şansı: &a%{chance}"
+    - "&7"
+    - "&a✔ Yükseltme Materyali"
+    - "{orb_status}"
+    - "{dust_status}"
+    - "{luck_booster_status}"
+    - "&7"
+    - "&e► SAĞ TIKLA yükseltmek için!"
+    - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  custom-model-data: 0
+  glowing: true
+
+
+
+gui-upgrade-button-no-item:
+  material: BARRIER
+  name: "&cEkipman Yok"
+  lore:
+    - "&7Güçlendirilecek ekipmanı yukarı koyun!"
+  custom-model-data: 0
+  glowing: false
+
+
+
+gui-upgrade-button-max-level:
+  material: BARRIER
+  name: "&cMaksimum Seviye"
+  lore:
+    - "&7Bu ekipman zaten +{max_level} seviyesinde!"
+  custom-model-data: 0
+  glowing: false
+
+
+
+gui-upgrade-button-no-material:
+  material: REDSTONE_BLOCK
+  name: "&cMateryal Gerekli"
+  lore:
+    - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    - "&fMevcut Seviye: &e+{level}"
+    - "&fHedef Seviye: &a+{target_level}"
+    - "&7"
+    - "&fBaşarı Şansı: &a%{chance}"
+    - "&7"
+    - "&c✘ Yükseltme Materyali Gerekli"
+    - "{orb_status}"
+    - "{dust_status}"
+    - "&7"
+    - "&cYükseltme materyali yerleştirin!"
+    - "&7━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  custom-model-data: 0
+  glowing: false
+
+# ============================================
+# EMPTY SLOT INDICATORS
+# ============================================
+# Placeholder items shown when slots are empty
+
